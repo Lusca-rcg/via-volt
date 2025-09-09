@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Exemplo de script: Smooth scroll para links internos
-    const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+    const navLinks = document.querySelectorAll('a[href^="#"]');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
