@@ -80,6 +80,7 @@ a {
     width: auto;
     max-width: 300px;   /* permite crescer mais para os lados */
     object-fit: contain;
+    transform: scale(1.2);
 }
 
 /* Links/botões do header maiores */
