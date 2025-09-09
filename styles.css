@@ -74,20 +74,28 @@ a {
     align-items: center;
 }
 
+/* Logo maior sem aumentar altura do header */
 .logo img {
-    height: 50px;
+    max-height: 80px;   /* aumenta a altura da logo */
+    width: auto;
+    max-width: 300px;   /* permite crescer mais para os lados */
+    object-fit: contain;
 }
 
+/* Links/botões do header maiores */
 .nav a {
-    margin-left: 20px;
-    font-weight: 600;
-    color: var(--text-color-light);
-    transition: color 0.3s;
+  margin-left: 34px;
+  font-weight: 600;
+  font-size: 1.1rem;   /* aumenta a fonte */
+  padding: 6px 10px;  /* mais área clicável */
+  color: var(--text-color-light);
+  transition: color 0.3s, transform 0.2s;
+}
+.nav a:hover {
+  color: var(--primary-color);
+  transform: translateY(-1px);
 }
 
-.nav a:hover {
-    color: var(--primary-color);
-}
 
 /* Hero Section */
 .hero {
@@ -297,6 +305,47 @@ section h2 {
     height: 30px;
     margin: 0 10px;
 }
+
+.beneficios { background:#fff; padding:80px 0; }
+.beneficios-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+}
+.b-card {
+  background:#fff; border:1px solid #e9eef3; border-radius:14px;
+  padding:24px; text-align:center; box-shadow:0 8px 18px rgba(0,0,0,.06);
+}
+.b-ico {
+  font-size:1.8rem; margin-bottom:8px;
+  background:#e9fce1; width:60px; height:60px;
+  display:grid; place-items:center; border-radius:12px;
+}
+.b-card h3 { margin:8px 0 6px; }
+.b-card p { font-size:.95rem; opacity:.85; }
+@media(max-width:960px){
+  .beneficios-grid{grid-template-columns:1fr}
+}
+
+
+.como-funciona { background:#f7fafc; padding:80px 0; }
+.cf-grid {
+  display:grid; grid-template-columns:1fr minmax(240px,340px) 1fr;
+  gap:24px; align-items:center;
+}
+.cf-list { list-style:none; padding:0; counter-reset:step; }
+.cf-list li {
+  background:#fff; border:1px solid #e8edf2; border-radius:12px;
+  padding:16px; margin:10px 0; box-shadow:0 6px 14px rgba(0,0,0,.06);
+}
+.cf-list span {
+  display:inline-block; font-weight:700; color:#4bb543; margin-right:6px;
+}
+.cf-phone { display:grid; place-items:center; }
+.cf-phone img { max-width:280px; border-radius:20px; box-shadow:0 14px 30px rgba(0,0,0,.15); }
+@media(max-width:960px){
+  .cf-grid{grid-template-columns:1fr}
+  .cf-phone{order:-1;margin-bottom:16px}
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
