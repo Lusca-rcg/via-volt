@@ -221,11 +221,35 @@ footer.footer {
 }
 
 
-/* Responsivo do footer */
+/* Responsivo geral */
 @media (max-width: 768px) {
-  footer.footer .container{
-    justify-content: center;
+  .hero h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+  .hero p { font-size: 1rem; }
+
+  section { padding: 60px 0; }
+  section h2 { font-size: 2rem; margin-bottom: 30px; }
+
+  .solucoes-grid .card {
+    width: 100%;
+    max-width: 450px; /* Evita que o card se estique demais em tablets */
+    margin: 0 auto;
+  }
+
+  .carregador-info-alto img {
+    height: auto;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-content {
     text-align: center;
+  }
+
+  footer.footer .container {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -253,6 +277,92 @@ footer.footer {
 .app-content .text { flex: 1; min-width: 300px; }
 .app-content .image { flex: 1; text-align: center; }
 .app-content .image img { max-width: 100%; height: auto; }
+
+/* === Responsive Nav === */
+.nav-toggle {
+    display: none; /* Oculto por padrão */
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100; /* Garante que fique sobre outros elementos */
+}
+.hamburger {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    background: var(--text-color-light);
+    transition: background 0.2s ease-in-out;
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--text-color-light);
+    transition: transform 0.2s ease-in-out;
+}
+.hamburger::before { transform: translateY(-8px); }
+.hamburger::after { transform: translateY(8px); }
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100vh;
+        background: var(--background-dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .nav.active {
+        display: flex;
+        transform: translateX(0);
+    }
+    .nav a {
+        font-size: 1.2rem;
+        margin: 20px 0;
+        height: auto;
+    }
+    .nav-toggle {
+        display: block; /* Mostra o botão no mobile */
+    }
+    .nav-toggle.active .hamburger {
+        background: transparent; /* Linha do meio some */
+    }
+    .nav-toggle.active .hamburger::before {
+        transform: translateY(0) rotate(45deg);
+    }
+    .nav-toggle.active .hamburger::after {
+        transform: translateY(0) rotate(-45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 80px 15px;
+    }
+
+    .app-content .image {
+        display: none; /* Esconde a imagem em telas muito pequenas */
+    }
+
+    .contact-form {
+        padding: 0 10px;
+    }
+}
 
 /* Formulário de Contato */
 .contato { background-color: var(--primary-color); color: var(--background-dark); }
