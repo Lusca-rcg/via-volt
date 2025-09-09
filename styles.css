@@ -1,0 +1,326 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Variáveis de cores */
+:root {
+    --primary-color: #b2f955; /* Verde de destaque */
+    --secondary-color: #92e043; /* Verde um pouco mais escuro para hover */
+    --text-color-light: #f4f4f4;
+    --text-color-dark: #1a1a1a;
+    --background-dark: #0e1f2b; /* Azul predominante */
+    --card-background: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    background-color: var(--card-background);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--background-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Cabeçalho */
+.header {
+    background-color: var(--background-dark);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav a {
+    margin-left: 20px;
+    font-weight: 600;
+    color: var(--text-color-light);
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(14, 31, 43, 0.8), rgba(14, 31, 43, 0.8)), url('https://images.unsplash.com/photo-1621966209503-4923e1f7481b') no-repeat center center/cover;
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--text-color-light);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 20px auto 40px;
+}
+
+/* Seções Gerais */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* Soluções */
+.solucoes {
+    background-color: var(--card-background);
+}
+
+.solucoes-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.solucoes-grid .card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.solucoes-grid .card:hover {
+    transform: translateY(-10px);
+}
+
+.solucoes-grid .card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.solucoes-grid .card li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.solucoes-grid .card li::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+}
+
+/* Carregadores */
+.carregadores {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+}
+
+.carregadores h2, .carregadores h3 {
+    color: var(--text-color-light);
+}
+
+.carregadores-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.carregador-info {
+    max-width: 450px;
+}
+
+
+.carregador-info-alto img {
+    max-width: 100%;
+    height: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.carregador-info img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+/* App Info */
+.app-info {
+    background-color: var(--card-background);
+    text-align: left;
+}
+
+.app-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.app-content .text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.app-content .image {
+    flex: 1;
+    text-align: center;
+}
+
+.app-content .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Formulário de Contato */
+.contato {
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+}
+
+.contato h2 {
+    color: var(--background-dark);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    font-weight: 600;
+}
+
+.contact-form .btn:hover {
+    background-color: #1a3243;
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-content .contact-info p {
+    margin: 5px 0;
+}
+
+.footer-content .social-media img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+
+    .nav {
+        margin-top: 15px;
+    }
+
+    .nav a {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .solucoes-grid .card {
+        width: 100%;
+    }
+
+    .app-content {
+        flex-direction: column-reverse;
+    }
+}
