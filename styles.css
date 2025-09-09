@@ -88,7 +88,7 @@ a { text-decoration: none; color: var(--primary-color); }
     /* trocado para a sua imagem */
     background:
       linear-gradient(rgba(14, 31, 43, 0.78), rgba(14, 31, 43, 0.78)),
-      url('./src/eletroposto-viasolar.png') no-repeat center center / cover;
+      url('./src/eletroposto-viasolar.webp') no-repeat center center / cover;
     color: var(--text-color-light);
     text-align: center;
 
