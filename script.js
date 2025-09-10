@@ -27,22 +27,44 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitButton = contactForm.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.textContent;
 
-        // Desabilitar o botão e mostrar feedback de envio
         submitButton.disabled = true;
         submitButton.textContent = 'Enviando...';
 
-        // Simulação de envio de formulário (atraso de 1 segundo)
-        setTimeout(() => {
-            // Exibir mensagem de sucesso (pode ser um modal ou uma notificação mais elegante)
-            alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+        const mensagem = document.getElementById('mensagem').value;
 
-            // Limpar o formulário
-            contactForm.reset();
+        const data = {
+            nome,
+            email,
+            telefone,
+            mensagem
+        };
 
-            // Restaurar o botão
+        fetch('https://webhook.viasolar.rio.br/webhook/formulario-viavolt', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
+                contactForm.reset();
+            } else {
+                alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.');
+        })
+        .finally(() => {
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
-        }, 1000);
+        });
     });
 
     // Hamburger menu toggle
