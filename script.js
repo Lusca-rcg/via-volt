@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mensagem
         };
 
-        fetch('https://webhook.viasolar.rio.br/webhook/formulario-viavolt', {
+        fetch('https://webhook.viasolar.rio.br/webhook/d86e077e-d47b-43a3-8b1e-20b4374df778', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
